@@ -1,0 +1,326 @@
+html{
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+
+  --text-color:rgba(255, 255, 255, 0.87);
+  --body-background-color:#242424;
+  --logo-box-shadow:#05c9ff;
+  --button-background:rgb(252, 252, 253);
+  --button-color:rgb(57, 185, 255);
+  --button-hover-background:#ffffff;
+  --button-hover-color:#000000;
+  --container-background-color:#f5f6f7;
+  --container-color:#242424;
+  --first-text-color:#868687;
+  --secondText-color:#424242;
+  --ac-delete-color:rgb(133 133 133);
+  --ac-delete-background-color:rgb(252,252,253);
+  --delete-svg-color:black;
+  --blue-background-color:rgba(5, 180, 255, 0.397);
+  --equal-background-color:#3ab7ff;
+  --equal-color:#ffffff;
+  --transition: 0.2s ease-in;
+
+  color: var(--text-color);
+  background-color: var(--body-background-color);
+  transition: var(--transition);
+}
+
+body.light {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+
+  --text-color:#242424;
+  --body-background-color:#f5f6f7;
+  --logo-box-shadow:none;
+  --container-background-color: #17181a;
+  --container-color:#242424;
+  --button-background:rgb(48 49 54);
+  --button-color:rgb(57 185 255);
+  --button-hover-background:#ffffff;
+  --button-hover-color:#000000;
+  --first-text-color:#747474;
+  --secondText-color: #f7f7f7;
+  --ac-delete-color:rgb(159 160 161);
+  --ac-delete-background-color:#5a5d60;
+  --delete-svg-color:black;
+  --blue-background-color:rgb(0 93 178);
+  --equal-background-color:#1991ff;
+  --equal-color:#ffffff;
+
+  color: var(--text-color);
+  background-color: var(--body-background-color);
+}
+
+.react{
+  display: flex;
+  justify-content: flex-end;
+  /* margin: 2rem; */
+  margin-bottom: 0;
+  position: absolute;
+  font-size: 0.8rem;
+  top: 1rem;
+  right: 1rem;
+}
+
+.logo {
+  height: 6em;
+  will-change: filter;
+  transition: filter 300ms;
+  animation: logo-spin 5s linear infinite;
+  filter: drop-shadow(0 0 2em var(--logo-box-shadow));
+}
+
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toggle button css */
+
+.theme-switch {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  direction: rtl;
+  margin: 1rem;
+}
+
+#theme-checkbox {
+  display: none;
+}
+
+#theme-checkbox + label {
+  /* change the font-size below to change the size of the switch button*/
+  font-size: 2rem;
+  height: 1.1em;
+  width: 2.2em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background-color:#3a3a3a;
+  position: relative;
+  border-radius:1.5rem;
+}
+
+#theme-checkbox:checked + label {
+  background-color:  #cecece;
+}
+
+#theme-checkbox + label:active {
+  transition: transform 0.1s;
+}
+
+#theme-checkbox + label div {
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: inherit;
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  z-index: 10;
+  transition: 0.5s cubic-bezier(1, 0.33, 0.11, 1.34);
+  background-color:  #212121;
+}
+
+#theme-checkbox:checked + label div {
+  /* left: calc(2.5em - .8em - .1em); */
+  left: 1.2em;
+  background-color:#f2f2f2;
+}
+
+#theme-checkbox + label span {
+  display: flex;
+}
+
+#theme-checkbox + label svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  padding: 0.15em;
+  box-sizing: border-box;
+}
+
+#theme-checkbox + label span:first-of-type {
+  color: #cecece;
+}
+
+#theme-checkbox + label span:last-of-type {
+  color: #212121;
+}
+
+/* Toggle css ends here  */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.container{
+  display: flex;
+  width: 18rem;
+  min-height: 41rem;
+  height: auto;
+  margin: 7rem auto;
+  flex-direction: column;
+  border-radius: 2.2rem;
+  background-color: var(--container-background-color);
+  padding: 0 1rem;
+  color: var(--container-color) ;
+  box-shadow: 4px 4px 6px #4d4d4f;
+}
+
+.screen{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 15rem;
+  height: auto;
+  margin: 1rem 0;
+  padding: 0 0.2rem;
+}
+
+.firstText{
+  font-size: 1.4rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--first-text-color);
+  width: 100%;
+  text-align: right;
+  margin: 0.7rem 0;
+  will-change: height;
+}
+
+.secondText{
+  color: var(--secondText-color);
+    font-size: 2.5rem;
+    margin: 0;
+    width: 100%;
+    text-align: right;
+    -webkit-text-stroke-width: 2.1px;
+    -webkit-text-stroke-color: var(--secondText-color);
+    font-family: 'Poppins';
+    will-change: contents;
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  grid-template-rows: repeat(5,auto);
+  gap: 1.3rem;
+  margin: 0 auto;
+}
+
+button{
+  background: var(--button-background);
+  width: 3.3rem;
+  height: 3.3rem;
+  font-size: 1.8rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 0.8rem;
+  border: none;
+  color: var(--button-color);
+  cursor: pointer;
+  transition: background-color ease-in-out 0.1s, color ease-in-out 0.1s;
+}
+
+button:hover{
+  background: var(--button-hover-background);
+  color: var(--button-hover-color);
+  box-shadow: 0.15rem 0.15rem 0.5rem rgb(113, 113, 113);
+}
+
+.ac,.delete
+{
+  color: var(--ac-delete-color);
+  background-color: var(--ac-delete-background-color);
+  font-family: sans-serif;
+}
+
+.delete{
+  padding-top: 0.15rem;
+  padding-right: 0.4rem;
+  font-size: 0;
+}
+.delete svg{
+  color: var(--delete-svg-color);
+}
+
+.ac:hover,.delete:hover{
+  background: rgba(255, 45, 45, 0.863);
+  color: #e6eff8;
+  box-shadow: 0.15rem 0.15rem 0.5rem rgb(113, 113, 113);
+}
+
+.blue{
+  background-color: var(--blue-background-color);
+  font-size: 2rem;
+  text-align: center;
+    font-weight: bold;
+}
+
+.plus{
+  font-weight: lighter;
+}
+
+.equal{
+  grid-area: 4/4/-1/-1;
+  height: auto;
+  color: var(--equal-color);
+  background-color: var(--equal-background-color) ;
+  font-size: 2rem;
+}
+
+.minus{
+  padding-bottom: 0.8rem;
+}
+
+.zero{
+  grid-area:5/1/6/3;
+  width: auto;
+}
+
+.blue:hover,.plus:hover,.zero:hover,.equal:hover{
+color: white;
+background-color: rgba(6, 155, 247, 0.929);
+box-shadow: 0.15rem 0.15rem 0.5rem rgb(113, 113, 113);
+}
+
+button:active{
+  background-color: rgb(185, 186, 187);
+}
+
+.ac:active,.delete:active{
+  background-color: rgb(136, 121, 121);
+}
+
+.blue:active,.plus:active,.zero:active,.equal:active{
+  background:#33505d;
+}
+
+@media (max-width:700px) {
+  .react{
+    position: absolute;
+    top: 2vw;
+    right: 0.83vw;
+    margin: 0;
+    font-size: 0.5rem;
+  }
+}
