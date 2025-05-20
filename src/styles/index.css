@@ -214,6 +214,7 @@ h1 {
     margin: 0;
     width: 100%;
     text-align: right;
+    word-break:break-wrord;
     -webkit-text-stroke-width: 2.1px;
     -webkit-text-stroke-color: var(--secondText-color);
     font-family: 'Poppins';
